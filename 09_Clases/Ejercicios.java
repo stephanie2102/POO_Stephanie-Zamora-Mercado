@@ -3,7 +3,7 @@
 import java.util.Scanner;
 
 
-public class Ejercicios{
+public class ejercicios{
     /*
     Vamos a hacer un ejemplo donde tengamos un menu con 4 opciones:
     1 .- es una calculadora
@@ -206,7 +206,9 @@ public class Ejercicios{
         un cuadrado de maximo 1000 de dimension
         */
 
-        int n, m=0;
+        int n;
+        boolean m= false;
+        char h;
 
         do{
             System.out.println("Ingrese el numero de asteristicos que desea que tenga el cuadro: ");
@@ -236,8 +238,15 @@ public class Ejercicios{
                 System.out.println();
 
             }
+            System.out.println("deseas hacer otro cuadrado, presiona 's' para si");
+            h = entrada.next().charAt(0);
+            if (h == 's' || h == 'S'){
+
+            }else{
+                m = true;
+            }                
             //salir de ese bucle infinito :3 que se quiebren la cabezita un ratito
-        }while(m==0);
+        }while(!m);
 
     }
 
@@ -246,24 +255,58 @@ public class Ejercicios{
 
         /*
         Quiero que se imprima una figura de la siguiente forma:
-        *****
+        ***********
         ///////////
-        *****
+        ***********
         ///////////
-        ****
+        **********
         //////////
         Hasta cubrir el tamaño de un cuadrado
         2 x 2
         **
         //
         3 x 3
-        *
+        ***
         ///
-        *
+        ***
         
         
         
         */
+        boolean m=false;
+        int n;
+        char continuar;
+        do{
+            System.out.println("introduce el tamaño del cuadrado, no negativos, no mayor que 100");
+            n = entrada.nextInt();
+            if( n<0 || n>100){
+               m = true;
+                System.out.println("El cuadro no acepta ni negativos ni mayores a 100");
+            }else{
+                
+                for(int i = 1; i<=n; i++){
+                    for (int j = 1; j<=n; j++){
+                        if(i % 2 != 0){
+                            System.out.print("/ ");
+                        }else{
+                            System.out.print("* ");
+                        }
+                    }
+                System.out.println(" ");
+                }
+            }
+            System.out.println("deseas hacer otro cuadrado, presiona 's' para si");
+            continuar = entrada.next().charAt(0);
+            if (continuar == 's' || continuar == 'S'){
+
+            }else{
+                m = true;
+            }    
+                
+            
+        }while(!m); 
+
+        
 
     }
 }
